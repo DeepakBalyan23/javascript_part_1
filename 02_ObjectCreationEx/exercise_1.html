@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+	// Ques1
+	var person1 = new Object();
+	person1.firstName = "Jn.";
+    person1.lastName = "John";
+	person1.job = function() {
+        document.getElementById("demo1").innerHTML = this.firstName + " " +this.lastName;
+	}
+    person1.job();
+    
+	//Ques2
+	var person2 = {
+		firstName: "Jm.",
+        lastName: "Jimmy",
+	  	job: function() {
+	  	document.getElementById("demo2").innerHTML = this.firstName + " " +this.lastName;
+		}
+    }
+    person2.job();
+
+	//Ques3
+	function person3(firstName, lastName){
+		this.firstName = firstName;
+        this.lastName = lastName;
+	}
+	person3.prototype.job = function(){
+		document.getElementById("demo3").innerHTML = this.firstName + " " +this.lastName;
+	}
+	var person3 = new person3("Jk", "Jack");
+    person3.job();
+    
+</script>
+
+</body>
+</html>
