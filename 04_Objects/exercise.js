@@ -213,6 +213,22 @@ function all_properties(obj)
 }
 
 console.log(parse_URL('https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python'));
+
+//Ques13)
+function Student(name) {
+  this.name = name;
+}
+var keys = [];
+Student.prototype.rollno = true;
+var obj = new Student("Sara");
+for (var key in obj) {
+  keys.push(key);
+}
+console.log(keys);
+
+
+//Ques14)
+console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));
 }
 
 console.log(all_properties(Math));
@@ -253,3 +269,32 @@ function parse_URL(url) {
 }
 
 console.log(parse_URL('https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python'));
+
+//Ques13)
+function Student(name) {
+  this.name = name;
+}
+var keys = [];
+Student.prototype.rollno = true;
+var obj = new Student("Sara");
+for (var key in obj) {
+  keys.push(key);
+}
+console.log(keys);
+
+
+//Ques14)
+console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));
+
+
+//Ques15)
+var obj = { title: 'Bill Gates',author: 'The Road Ahead',libraryID: 1254};
+var obj2 = new Object();
+for(var key in obj){
+  obj2[obj[key]] = key;
+}
+console.log(obj2);
+
+
+//Ques16)
+
