@@ -136,6 +136,120 @@ console.log('Area =', c.area().toFixed(2));
 console.log('perimeter =', c.perimeter().toFixed(2));
 
 //Ques10)
+var library = [ 
+   {
+       title: 'Bill Gates',
+       author: 'The Road Ahead',
+       libraryID: 1254
+   },
+   {
+       title: 'Steve Jobs',
+       author: 'Walter Isaacson',
+       libraryID: 4264
+   },
+   {
+       title: 'Mockingjay: The Final Book of The Hunger Games',
+       author: 'Suzanne Collins',
+       libraryID: 3245
+   }];
 
+var sort_by = function(field_name, reverse, initial){
+
+   var key = initial ?
+       function(x)
+             {
+               return initial(x[field_name]);
+             } :
+       function(x) 
+             {
+               return x[field_name];
+             };
+
+   reverse = !reverse ? 1 : -1;
+
+   return function (x, y) {
+       return x = key(x), y = key(y), reverse * ((x > y) - (y > x));
+     } ;
+};
+
+
+var newobj = library.sort(sort_by('libraryID', true, parseInt));
+
+console.log(newobj);
 
 //Ques11)
+function all_properties(obj) 
+{
+ return Object.getOwnPropertyNames(obj);function parse_URL(url) {
+    var a = document.createElement('a');
+    a.href = url;
+    return {
+        source: url,
+        protocol: a.protocol.replace(':', ''),
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        params: (function () {
+            var ret = {},
+                seg = a.search.replace(/^\?/, '').split('&'),
+                len = seg.length,
+                i = 0,
+                s;
+            for (; i < len; i++) {
+                if (!seg[i]) {
+                    continue;
+                }
+                s = seg[i].split('=');
+                ret[s[0]] = s[1];
+            }
+            return ret;
+        })(),
+        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
+        hash: a.hash.replace('#', ''),
+        path: a.pathname.replace(/^([^\/])/, '/$1'),
+        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
+        segments: a.pathname.replace(/^\//, '').split('/')
+    };
+}
+
+console.log(parse_URL('https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python'));
+}
+
+console.log(all_properties(Math));
+
+console.log(all_properties(Array));
+
+//Ques12)
+function parse_URL(url) {
+    var a = document.createElement('a');
+    a.href = url;
+    return {
+        source: url,
+        protocol: a.protocol.replace(':', ''),
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        params: (function () {
+            var ret = {},
+                seg = a.search.replace(/^\?/, '').split('&'),
+                len = seg.length,
+                i = 0,
+                s;
+            for (; i < len; i++) {
+                if (!seg[i]) {
+                    continue;
+                }
+                s = seg[i].split('=');
+                ret[s[0]] = s[1];
+            }
+            return ret;
+        })(),
+        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
+        hash: a.hash.replace('#', ''),
+        path: a.pathname.replace(/^([^\/])/, '/$1'),
+        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
+        segments: a.pathname.replace(/^\//, '').split('/')
+    };
+}
+
+console.log(parse_URL('https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python'));
