@@ -289,6 +289,15 @@ console.log(Object.values({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}))
 
 //Ques15)
 var obj = { title: 'Bill Gates',author: 'The Road Ahead',libraryID: 1254};
+var pairs = Array();
+for(var key in obj){
+  pairs.push([key, obj[key]]);
+}
+console.log(pairs);
+
+
+//Ques16)
+var obj = { title: 'Bill Gates',author: 'The Road Ahead',libraryID: 1254};
 var obj2 = new Object();
 for(var key in obj){
   obj2[obj[key]] = key;
@@ -296,5 +305,23 @@ for(var key in obj){
 console.log(obj2);
 
 
-//Ques16)
+//Ques17)
+console.log({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}.hasOwnProperty("green"));
+
+
+//Ques18)
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript function to check whether a specified value is a DOM element</title>
+</head>
+<body>
+
+</body>
+</html>
+function is_dom_element(obj) {
+    return !!(obj && obj.nodeType === 1);
+  }
+console.log(is_dom_element(jQuery('body')[0]));
 
